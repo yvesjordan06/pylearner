@@ -32,64 +32,20 @@ class Ui_CentralSide(object):
         spacerItem1 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.horizontalLayout.addItem(spacerItem1)
         self.verticalLayout.addLayout(self.horizontalLayout)
+        spacerItem2 = QtWidgets.QSpacerItem(20, 20, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
+        self.verticalLayout.addItem(spacerItem2)
         self.video_player_frame = QtWidgets.QFrame(CentralSide)
         self.video_player_frame.setMinimumSize(QtCore.QSize(600, 248))
+        self.video_player_frame.setStyleSheet("QFrame\n"
+"{\n"
+"    border: 2px solid grey;\n"
+"    background-color: black;\n"
+"\n"
+"}")
         self.video_player_frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.video_player_frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.video_player_frame.setObjectName("video_player_frame")
         self.verticalLayout.addWidget(self.video_player_frame)
-        self.frame_2 = QtWidgets.QFrame(CentralSide)
-        self.frame_2.setStyleSheet("QFrame\n"
-"{\n"
-"      background-color: #28d;\\n\n"
-" }")
-        self.frame_2.setFrameShape(QtWidgets.QFrame.StyledPanel)
-        self.frame_2.setFrameShadow(QtWidgets.QFrame.Raised)
-        self.frame_2.setObjectName("frame_2")
-        self.horizontalLayout_3 = QtWidgets.QHBoxLayout(self.frame_2)
-        self.horizontalLayout_3.setObjectName("horizontalLayout_3")
-        spacerItem2 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.horizontalLayout_3.addItem(spacerItem2)
-        self.horizontalLayout_2 = QtWidgets.QHBoxLayout()
-        self.horizontalLayout_2.setSpacing(3)
-        self.horizontalLayout_2.setObjectName("horizontalLayout_2")
-        self.backward_button = QtWidgets.QPushButton(self.frame_2)
-        self.backward_button.setStyleSheet("QPushButton\n"
-"{\n"
-"    background-color: transparent;\n"
-"}")
-        self.backward_button.setText("")
-        icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap(":/svg/md-skip-backward.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.backward_button.setIcon(icon)
-        self.backward_button.setObjectName("backward_button")
-        self.horizontalLayout_2.addWidget(self.backward_button)
-        self.play_button = QtWidgets.QPushButton(self.frame_2)
-        self.play_button.setStyleSheet("QPushButton\n"
-"{\n"
-"    background-color: transparent;\n"
-"}")
-        self.play_button.setText("")
-        icon1 = QtGui.QIcon()
-        icon1.addPixmap(QtGui.QPixmap(":/svg/icons8-play-32.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.play_button.setIcon(icon1)
-        self.play_button.setObjectName("play_button")
-        self.horizontalLayout_2.addWidget(self.play_button)
-        self.forward_buttton = QtWidgets.QPushButton(self.frame_2)
-        self.forward_buttton.setStyleSheet("QPushButton\n"
-"{\n"
-"    background-color: transparent;\n"
-"}")
-        self.forward_buttton.setText("")
-        icon2 = QtGui.QIcon()
-        icon2.addPixmap(QtGui.QPixmap(":/svg/md-skip-forward.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.forward_buttton.setIcon(icon2)
-        self.forward_buttton.setObjectName("forward_buttton")
-        self.horizontalLayout_2.addWidget(self.forward_buttton)
-        self.horizontalLayout_3.addLayout(self.horizontalLayout_2)
-        spacerItem3 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.horizontalLayout_3.addItem(spacerItem3)
-        self.verticalLayout.addWidget(self.frame_2)
         self.scrollArea = QtWidgets.QScrollArea(CentralSide)
         self.scrollArea.setStyleSheet("QScrollArea\n"
 "{\n"
@@ -115,7 +71,7 @@ class Ui_CentralSide(object):
         self.verticalLayout_2.addWidget(self.comment_content_label)
         self.scrollArea.setWidget(self.scrollAreaWidgetContents)
         self.verticalLayout.addWidget(self.scrollArea)
-        self.verticalLayout.setStretch(1, 3)
+        self.verticalLayout.setStretch(2, 3)
         self.verticalLayout.setStretch(3, 1)
 
         self.retranslateUi(CentralSide)
@@ -148,7 +104,8 @@ class Ui_CentralSide(object):
 "    Je ne suis pas un musicien de quel que sorte que ce soit car je sne suis pas talentueux\n"
 "    Je pourrai bien entrainer mes enfants plus tard a jouer des instruments car c\'est bien pour ameliorer leur QI"))
 
-from . import icons_rc
+
+from .icons_rc import *
 
 
 if __name__ == "__main__":

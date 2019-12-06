@@ -13,7 +13,7 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout" stretch="0,3,0,1">
+  <layout class="QVBoxLayout" name="verticalLayout" stretch="0,0,3,1">
    <property name="leftMargin">
     <number>0</number>
    </property>
@@ -71,6 +71,22 @@
     </layout>
    </item>
    <item>
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeType">
+      <enum>QSizePolicy::Fixed</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item>
     <widget class="QFrame" name="video_player_frame">
      <property name="minimumSize">
       <size>
@@ -78,21 +94,13 @@
        <height>248</height>
       </size>
      </property>
-     <property name="frameShape">
-      <enum>QFrame::StyledPanel</enum>
-     </property>
-     <property name="frameShadow">
-      <enum>QFrame::Raised</enum>
-     </property>
-    </widget>
-   </item>
-   <item>
-    <widget class="QFrame" name="frame_2">
      <property name="styleSheet">
       <string notr="true">QFrame
 {
-      background-color: #28d;\n
- }</string>
+	border: 2px solid grey;
+	background-color: black;
+
+}</string>
      </property>
      <property name="frameShape">
       <enum>QFrame::StyledPanel</enum>
@@ -100,92 +108,6 @@
      <property name="frameShadow">
       <enum>QFrame::Raised</enum>
      </property>
-     <layout class="QHBoxLayout" name="horizontalLayout_3">
-      <item>
-       <spacer name="horizontalSpacer_3">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>40</width>
-          <height>20</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
-      <item>
-       <layout class="QHBoxLayout" name="horizontalLayout_2">
-        <property name="spacing">
-         <number>3</number>
-        </property>
-        <item>
-         <widget class="QPushButton" name="backward_button">
-          <property name="styleSheet">
-           <string notr="true">QPushButton
-{
-	background-color: transparent;
-}</string>
-          </property>
-          <property name="text">
-           <string/>
-          </property>
-          <property name="icon">
-           <iconset resource="icons.qrc">
-            <normaloff>:/svg/md-skip-backward.svg</normaloff>:/svg/md-skip-backward.svg</iconset>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="play_button">
-          <property name="styleSheet">
-           <string notr="true">QPushButton
-{
-	background-color: transparent;
-}</string>
-          </property>
-          <property name="text">
-           <string/>
-          </property>
-          <property name="icon">
-           <iconset resource="icons.qrc">
-            <normaloff>:/svg/icons8-play-32.png</normaloff>:/svg/icons8-play-32.png</iconset>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="forward_buttton">
-          <property name="styleSheet">
-           <string notr="true">QPushButton
-{
-	background-color: transparent;
-}</string>
-          </property>
-          <property name="text">
-           <string/>
-          </property>
-          <property name="icon">
-           <iconset resource="icons.qrc">
-            <normaloff>:/svg/md-skip-forward.svg</normaloff>:/svg/md-skip-forward.svg</iconset>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </item>
-      <item>
-       <spacer name="horizontalSpacer_4">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>40</width>
-          <height>20</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
-     </layout>
     </widget>
    </item>
    <item>

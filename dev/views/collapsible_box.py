@@ -14,7 +14,7 @@ class CollapsibleBox(QtWidgets.QWidget):
         self.vertical_layout.setSpacing(0)
         self.vertical_layout.addWidget(self.toggle_button)
         self.setLayout(self.vertical_layout)
-        self.setMaximumSize(self.toggle_button.size())
+        
         self.content_area = QtWidgets.QScrollArea()
         self.content_area.setWidgetResizable(True)
         self.content_area.setFrameShape(QtWidgets.QFrame.NoFrame)
@@ -34,6 +34,7 @@ class CollapsibleBox(QtWidgets.QWidget):
 
 
         lay = QtWidgets.QVBoxLayout()
+        lay.setSizeConstraint(QtWidgets.QVBoxLayout.SetDefaultConstraint)
         for j in range(10):
             st = SubTitle()
             label = QtWidgets.QLabel("{}".format(j))
@@ -43,7 +44,6 @@ class CollapsibleBox(QtWidgets.QWidget):
             )
             label.setAlignment(QtCore.Qt.AlignCenter)
             lay.addWidget(st)
-
         
 
 
@@ -58,8 +58,10 @@ class CollapsibleBox(QtWidgets.QWidget):
             QtCore.QPropertyAnimation(self.content_area, b"maximumHeight")
         )
 
-       
+
+        
         self.setContentLayout(lay)
+        
 
 
     def toggle(self):
@@ -94,6 +96,9 @@ class CollapsibleBox(QtWidgets.QWidget):
         content_animation.setDuration(250)
         content_animation.setStartValue(0)
         content_animation.setEndValue(content_height)
+        self.toggle_animation.setDirection(QtCore.QAbstractAnimation.Backward)
+        self.toggle_animation.start()
+        #self.toggle()
 
 if __name__ == '__main__':
 

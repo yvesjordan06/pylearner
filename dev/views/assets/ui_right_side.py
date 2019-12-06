@@ -67,7 +67,7 @@ class Ui_RightSide(object):
         self.code_text_label.setAlignment(QtCore.Qt.AlignCenter)
         self.code_text_label.setObjectName("code_text_label")
         self.horizontalLayout_8.addWidget(self.code_text_label)
-        self.verticalLayout.addWidget(self.code_frame)
+        ##self.verticalLayout.addWidget(self.code_frame)
         self.question_frame = CustomFrame(RightSide)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)

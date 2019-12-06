@@ -5,6 +5,7 @@ from collapsible_box import *
 class LeftSide(QtWidgets.QWidget):
     def __init__(self, parent=None):
         super(LeftSide, self).__init__(parent)
+        self.setMinimumWidth(200)
         self.layout = QtWidgets.QVBoxLayout(self)
         self.layout.setContentsMargins(0, 12, 0, 12)
 
@@ -21,16 +22,15 @@ class LeftSide(QtWidgets.QWidget):
         self.somaire_label.setAlignment(QtCore.Qt.AlignCenter)
         self.somaire_label.setStyleSheet(TEXT_STYLE1)
         self.layout.addWidget(self.somaire_label)
-        for i in range(5):
+        for _ in range(10):
             tg = CollapsibleBox(self.scrollAreaWidgetContents)
             self.scroll_layout.addWidget(tg)
+        self.scroll_layout.setSizeConstraint(QtWidgets.QHBoxLayout.SetMinimumSize)
         
         self.scroll_area.setWidget(self.scrollAreaWidgetContents)
         self.layout.addWidget(self.scroll_area)
         spacerItem = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
         self.scroll_layout.addItem(spacerItem)        
-        #self.layout.setStretch(1, 1)
-        #self.layout.setStretch(3, 2)
         self.layout.setStretch(1, 0)
 
 
