@@ -69,10 +69,10 @@ class Ui_MainWindow(object):
         self.label_3.setMinimumSize(QtCore.QSize(80, 64))
         self.label_3.setMaximumSize(QtCore.QSize(80, 64))
         self.label_3.setStyleSheet("QLabel {\n"
-"    border: 1px solid  rgb(54, 149, 243);\n"
-"    border-radius:  32px;\n"
-"    margin-left: 16px;\n"
-"}")
+                                   "    border: 1px solid  rgb(54, 149, 243);\n"
+                                   "    border-radius:  32px;\n"
+                                   "    margin-left: 16px;\n"
+                                   "}")
         self.label_3.setText("")
         self.label_3.setPixmap(QtGui.QPixmap(":/svg/telegram.svg"))
         self.label_3.setScaledContents(True)
@@ -81,9 +81,9 @@ class Ui_MainWindow(object):
         self.verticalLayout_2.addWidget(self.label_3)
         self.label_4 = QtWidgets.QLabel(self.connexion_page)
         self.label_4.setStyleSheet("QLabel {\n"
-"    font-size: 16px;\n"
-"    font-weight: bold;\n"
-"}")
+                                   "    font-size: 16px;\n"
+                                   "    font-weight: bold;\n"
+                                   "}")
         self.label_4.setAlignment(QtCore.Qt.AlignCenter)
         self.label_4.setObjectName("label_4")
         self.verticalLayout_2.addWidget(self.label_4)
@@ -106,41 +106,41 @@ class Ui_MainWindow(object):
         self.username_line = QtWidgets.QLineEdit(self.connexion_page)
         self.username_line.setMinimumSize(QtCore.QSize(292, 36))
         self.username_line.setStyleSheet("QLineEdit {\n"
-"    padding-left: 8px;\n"
-"    padding-right: 8px;\n"
-"    border: 1px solid black;\n"
-"    border-color: rgb(120, 124, 129) none none rgb(120, 124, 129);\n"
-"}\n"
-"\n"
-"QLineEdit: hover\n"
-"{\n"
-"    border: 1px solid rgb(54, 149, 243);\n"
-"}")
+                                         "    padding-left: 8px;\n"
+                                         "    padding-right: 8px;\n"
+                                         "    border: 1px solid black;\n"
+                                         "    border-color: rgb(120, 124, 129) none none rgb(120, 124, 129);\n"
+                                         "}\n"
+                                         "\n"
+                                         "QLineEdit: hover\n"
+                                         "{\n"
+                                         "    border: 1px solid rgb(54, 149, 243);\n"
+                                         "}")
         self.username_line.setObjectName("username_line")
         self.verticalLayout.addWidget(self.username_line)
         self.password_line = QtWidgets.QLineEdit(self.connexion_page)
         self.password_line.setMinimumSize(QtCore.QSize(292, 36))
         self.password_line.setStyleSheet("QLineEdit {\n"
-"    padding-left: 8px;\n"
-"    padding-right: 8px;\n"
-"    border: 1px solid black;\n"
-"    border-color: rgb(120, 124, 129) none none rgb(120, 124, 129);\n"
-"}\n"
-"\n"
-"QLineEdit: hover\n"
-"{\n"
-"    border: 1px solid rgb(54, 149, 243);\n"
-"}")
+                                         "    padding-left: 8px;\n"
+                                         "    padding-right: 8px;\n"
+                                         "    border: 1px solid black;\n"
+                                         "    border-color: rgb(120, 124, 129) none none rgb(120, 124, 129);\n"
+                                         "}\n"
+                                         "\n"
+                                         "QLineEdit: hover\n"
+                                         "{\n"
+                                         "    border: 1px solid rgb(54, 149, 243);\n"
+                                         "}")
         self.password_line.setObjectName("password_line")
         self.verticalLayout.addWidget(self.password_line)
         self.pushButton = QtWidgets.QPushButton(self.connexion_page)
         self.pushButton.setMinimumSize(QtCore.QSize(292, 36))
         self.pushButton.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.pushButton.setStyleSheet("QPushButton\n"
-"{\n"
-"    background-color: rgb(54, 149, 243);\n"
-"    border: none;\n"
-"}")
+                                      "{\n"
+                                      "    background-color: rgb(54, 149, 243);\n"
+                                      "    border: none;\n"
+                                      "}")
         self.pushButton.setObjectName("pushButton")
         self.verticalLayout.addWidget(self.pushButton)
         self.horizontalLayout_2.addLayout(self.verticalLayout)
@@ -166,7 +166,7 @@ class Ui_MainWindow(object):
         self.stackedWidget.addWidget(self.page)
         self.verticalLayout_6.addWidget(self.stackedWidget)
         MainWindow.setCentralWidget(self.centralwidget)
-        
+
         self.menubar = QtWidgets.QMenuBar(MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 800, 21))
         self.menubar.setObjectName("menubar")
@@ -197,8 +197,8 @@ class Ui_MainWindow(object):
         self.menuAide.addAction(self.actionA_Propos)
         self.menubar.addAction(self.menuFichier.menuAction())
         self.menubar.addAction(self.menuAffichage.menuAction())
-        self.menubar.addAction(self.menuAide.menuAction())        
-        
+        self.menubar.addAction(self.menuAide.menuAction())
+
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
         self.statusbar.setObjectName("statusbar")
         MainWindow.setStatusBar(self.statusbar)
@@ -212,11 +212,12 @@ class Ui_MainWindow(object):
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
         self.label_2.setText(_translate("MainWindow", "PYUY1"))
         self.label_4.setText(_translate("MainWindow", "Se connecter"))
-        self.label_5.setText(_translate("MainWindow", "         La plateforme reservee aux membres de la communaute python de l\'universite de yaounde 1. Si vous faites parti de la communaute et ne parvenez pas a vous connecter, veuillez contacter htttps://pyuy1.com/register"))
+        self.label_5.setText(_translate("MainWindow",
+                                        "         La plateforme reservee aux membres de la communaute python de l\'universite de yaounde 1. Si vous faites parti de la communaute et ne parvenez pas a vous connecter, veuillez contacter htttps://pyuy1.com/register"))
         self.username_line.setPlaceholderText(_translate("MainWindow", "Username"))
         self.password_line.setPlaceholderText(_translate("MainWindow", "Password"))
         self.pushButton.setText(_translate("MainWindow", "Acceder a mes cours"))
-        
+
         self.menuFichier.setTitle(_translate("MainWindow", "Fichier"))
         self.menuAffichage.setTitle(_translate("MainWindow", "Affichage"))
         self.menuAide.setTitle(_translate("MainWindow", "Aide"))
@@ -224,14 +225,12 @@ class Ui_MainWindow(object):
         self.actionQuitter.setText(_translate("MainWindow", "Quitter"))
         self.actionPlein_Ecran.setText(_translate("MainWindow", "Plein Ecran"))
         self.actionRacourcis_clavier.setText(_translate("MainWindow", "Racourcis clavier"))
-        self.actionA_Propos.setText(_translate("MainWindow", "A Propos"))        
-
-
-from . import icons_rc
+        self.actionA_Propos.setText(_translate("MainWindow", "A Propos"))
 
 
 if __name__ == "__main__":
     import sys
+
     app = QtWidgets.QApplication(sys.argv)
     MainWindow = QtWidgets.QMainWindow()
     ui = Ui_MainWindow()

@@ -2,6 +2,7 @@ from PyQt5 import QtWidgets, QtCore
 from assets.utils import *
 from collapsible_box import *
 
+
 class LeftSide(QtWidgets.QWidget):
     def __init__(self, parent=None):
         super(LeftSide, self).__init__(parent)
@@ -12,7 +13,7 @@ class LeftSide(QtWidgets.QWidget):
         self.scroll_area = QtWidgets.QScrollArea()
         self.scroll_area.setFrameShape(QtWidgets.QFrame.NoFrame)
         self.scroll_area.setWidgetResizable(True)
-        
+
         self.scrollAreaWidgetContents = QtWidgets.QWidget()
 
         self.scroll_layout = QtWidgets.QVBoxLayout(self.scrollAreaWidgetContents)
@@ -26,16 +27,15 @@ class LeftSide(QtWidgets.QWidget):
             tg = CollapsibleBox(self.scrollAreaWidgetContents)
             self.scroll_layout.addWidget(tg)
         self.scroll_layout.setSizeConstraint(QtWidgets.QHBoxLayout.SetMinimumSize)
-        
+
         self.scroll_area.setWidget(self.scrollAreaWidgetContents)
         self.layout.addWidget(self.scroll_area)
         spacerItem = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.scroll_layout.addItem(spacerItem)        
+        self.scroll_layout.addItem(spacerItem)
         self.layout.setStretch(1, 0)
 
 
 if __name__ == '__main__':
-
     import sys
     from PyQt5.QtWidgets import QApplication
 

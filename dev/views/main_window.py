@@ -1,8 +1,9 @@
-from PyQt5 import QtWidgets, QtCore, QtGui
-from left_side import LeftSide
-from central_side import CentralSide
-from right_side import RightSide
+from PyQt5 import QtWidgets, QtCore
 from assets.ui_main_window import Ui_MainWindow
+from central_side import CentralSide
+from left_side import LeftSide
+from right_side import RightSide
+
 
 class MainWindow(QtWidgets.QMainWindow):
     def __init__(self):
@@ -22,25 +23,22 @@ class MainWindow(QtWidgets.QMainWindow):
         self.layout.addWidget(self.splitter)
         self.ui.pushButton.clicked.connect(self.connexion)
         self.ui.actionOuvrir.triggered.connect(self.open_file)
-        
-        
-
 
     def connexion(self):
         self.ui.stackedWidget.setCurrentIndex(1)
         self.ui.menubar.show()
-        
-        
+
     def open_file(self):
         fileName, _ = QtWidgets.QFileDialog.getOpenFileName(self, "Open Movie",
-                                                  QtCore.QDir.homePath() + "/Videos", "Media (*.webm *.mp4 *.ts *.avi *.mpeg *.mpg *.mkv *.VOB *.m4v *.3gp *.mp3 *.m4a *.wav *.ogg *.flac *.m3u *.m3u8)")    
-        
+                                                            QtCore.QDir.homePath() + "/Videos",
+                                                            "Media (*.webm *.mp4 *.ts *.avi *.mpeg *.mpg *.mkv *.VOB "
+                                                            "*.m4v *.3gp *.mp3 *.m4a *.wav *.ogg *.flac *.m3u *.m3u8)")
+
         if fileName:
             self.central_side.open_file(fileName)
-        
-        
-if __name__ == '__main__':
 
+
+if __name__ == '__main__':
     import sys
     from PyQt5.QtWidgets import QApplication
 

@@ -1,9 +1,6 @@
 from PyQt5 import QtCore, QtGui, QtWidgets, QtMultimedia, QtMultimediaWidgets
-import icons_rc 
-import random
 from right_side import RightSide
 from ui_main_window import Ui_MainWindow
-
 
 SAMPLE_COMMENTS = """
     Hmm. We’re having trouble finding that site.\n
@@ -51,18 +48,6 @@ FRAME_STYLE1 = """QFrame\n
         }"""
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 class MainWindow(QtWidgets.QMainWindow):
     def __init__(self):
         super(MainWindow, self).__init__()
@@ -78,7 +63,6 @@ class MainWindow(QtWidgets.QMainWindow):
         self.right_side = RightSide()
         self.splitter.addWidget(self.right_side)
         self.layout.addWidget(self.splitter)
-
 
 
 class MediaControl(QtWidgets.QWidget):
@@ -107,7 +91,7 @@ class MediaControl(QtWidgets.QWidget):
 
         self.pause_label = QtWidgets.QLabel(self.frame)
         self.pause_label.setText("||")
-        #self.icon_label.setPixmap(QtGui.QPixmap(":/svg/angle-arrow-down.svg"))
+        # self.icon_label.setPixmap(QtGui.QPixmap(":/svg/angle-arrow-down.svg"))
 
         self.backward_label = QtWidgets.QLabel(self.frame)
         self.backward_label.setPixmap(QtGui.QPixmap(":/svg/md-skip-backward.svg"))
@@ -115,7 +99,7 @@ class MediaControl(QtWidgets.QWidget):
         for label in (self.backward_label, self.pause_label, self.forward_label):
             label.setScaledContents(True)
             label.setAlignment(QtCore.Qt.AlignCenter)
-            label.setMaximumSize(QtCore.QSize(18,18))
+            label.setMaximumSize(QtCore.QSize(18, 18))
             label.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
             self.frame_layout.addWidget(label)
 
@@ -125,11 +109,11 @@ class MediaControl(QtWidgets.QWidget):
         self.layout.addWidget(self.frame)
 
 
-
 class CentralSide(QtWidgets.QWidget):
     f_number = 0
     s_number = 0
     title = ""
+
     def __init__(self, f_number=0, s_number=0, title="TItle", parent=None):
         super(CentralSide, self).__init__(parent)
         self.f_number = f_number
@@ -138,12 +122,12 @@ class CentralSide(QtWidgets.QWidget):
 
         self.layout = QtWidgets.QVBoxLayout(self)
         self.layout.setContentsMargins(0, 32, 0, 0)
-        
+
         self.title_label = QtWidgets.QLabel(self)
         self.title_label.setStyleSheet(TEXT_STYLE2)
         self.title_label.setText("{}.{} {}".format(self.f_number, self.s_number, self.title))
         self.title_label.setAlignment(QtCore.Qt.AlignCenter)
-        self.title_label.setStyleSheet(TEXT_STYLE2)        
+        self.title_label.setStyleSheet(TEXT_STYLE2)
 
         self.media_player_frame = QtWidgets.QFrame(self)
         self.media_player_frame.setStyleSheet(FRAME_STYLE1)
@@ -151,26 +135,24 @@ class CentralSide(QtWidgets.QWidget):
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.media_player_frame.sizePolicy().hasHeightForWidth())
-        self.media_player_frame.setSizePolicy(sizePolicy)        
+        self.media_player_frame.setSizePolicy(sizePolicy)
         self.media_player_frame.setMinimumSize(QtCore.QSize(500, 500))
-        self.media_player_frame.setMaximumSize(QtCore.QSize(16777215, 16777215))        
+        self.media_player_frame.setMaximumSize(QtCore.QSize(16777215, 16777215))
 
         self.media_layout = QtWidgets.QVBoxLayout(self.media_player_frame)
-        self.media_layout.setContentsMargins(0,0,0,0)
-        
+        self.media_layout.setContentsMargins(0, 0, 0, 0)
+
         self.media_player = QtMultimedia.QMediaPlayer(None, QtMultimedia.QMediaPlayer.VideoSurface)
         self.video_widget = QtMultimediaWidgets.QVideoWidget()
         self.media_player.setVideoOutput(self.video_widget)
-        
-        
-        self.media_controler = MediaControl()        
+
+        self.media_controler = MediaControl()
 
         self.media_layout.addWidget(self.video_widget)
         self.media_layout.addWidget(self.media_controler)
-        
-        
+
         self.scroll_text = QtWidgets.QScrollArea(self)
-        size_policy =  QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
+        size_policy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
         size_policy.setHorizontalStretch(0)
         size_policy.setVerticalStretch(0)
         size_policy.setHeightForWidth(self.scroll_text.sizePolicy().hasHeightForWidth())
@@ -187,21 +169,16 @@ class CentralSide(QtWidgets.QWidget):
         self.comment_content_label.setWordWrap(True)
         self.comment_content_label.setText(SAMPLE_COMMENTS)
         self.comment_layout.addWidget(self.comment_content_label)
-        
+
         self.layout.addWidget(self.title_label)
-        #self.layout.addLayout(self.media_layout)
+        # self.layout.addLayout(self.media_layout)
         self.layout.addWidget(self.media_player_frame)
         self.layout.addWidget(self.scroll_text)
-        self.layout.setStretch(1,1)
+        self.layout.setStretch(1, 1)
         self.layout.setStretch(1, 3)
-        
-
-        
-
 
 
 if __name__ == '__main__':
-
     import sys
     from PyQt5.QtWidgets import QApplication
 
@@ -209,9 +186,3 @@ if __name__ == '__main__':
     collapse = CentralSide()
     collapse.show()
     sys.exit(app.exec_())
-    
-
-
-
-
-
